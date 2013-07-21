@@ -1,6 +1,7 @@
 RACE APP
 Social bike racing. 
 
+[Screenshots of the app in action](http://imgur.com/a/EfSb9?gallery)
 
 Getting Started
 ===============
