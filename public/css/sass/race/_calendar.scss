@@ -1,0 +1,57 @@
+.calendar {
+	min-height:516px;
+	@media (max-width:588px) {
+		& {
+			display:none;
+		}
+	}
+}
+
+.race-calendar {
+	@extend .table;
+	@extend .table-bordered;	
+	border-collapse: separate;
+
+	td {
+		padding:2px;
+		width: (100% / 7);
+		&.active {
+			header {
+				color: $white;				
+				@include opacity(80);
+			}
+		}
+		&.highlight {
+			outline: $red solid 1px;
+		}
+
+		header {
+			// background-color: $grayLighter;
+			padding:2px 5px;			
+			span {
+				color: $white;
+				@extend .pull-right;
+			}
+		}
+
+		& > div {
+			padding:5px;
+			line-height:1.1em;
+			min-height: 80px;
+			ol {
+				margin-left:14px;
+				li {
+					font-size: $fontSizeSmall;
+					color: $gray;
+					line-height:1.1em;
+					margin-bottom:0;
+					list-style:none;
+					text-indent:-11px;
+					&:before {
+						content: '– ';
+					}
+				}
+			}
+		}
+	}	
+}

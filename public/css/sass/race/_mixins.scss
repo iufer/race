@@ -1,0 +1,14 @@
+
+// Create a set of color fixtures for a given class
+@mixin color-background-border($class, $color) {
+	.#{$class} {
+		color: $color;
+	}
+	.bg-#{$class} {
+		background-color: $color;
+	}
+	.border#{$class} {
+		border-color: $color;
+	}
+
+}

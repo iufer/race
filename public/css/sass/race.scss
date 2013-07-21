@@ -1,0 +1,190 @@
+// sass libs
+@import "compass";
+@import "compass/css3";
+
+// vendor libs
+@import "bootstrap/bootstrap";
+@import "bootstrap/responsive";
+
+// race libs
+@import "race/mixins";
+@import "race/calendar";
+@import "race/responsive";
+@import "race/riders";
+@import "race/races";
+@import "race/series";
+@import "race/footer";
+
+/* Containers */
+.container-main {
+	background-color:white;
+	padding:0 20px;
+	margin-top:20px;
+	border-radius:6px;
+	min-height:700px;
+}
+.container-sponsors {
+	margin-top:3em;
+}
+.container-footer-wrapper {
+	background-color: black;
+	margin-top:3em;
+}
+.container-footer {
+	padding-top:3em;
+	padding-bottom:3em;	
+}
+
+
+/* Page Styles */
+.siteinfo {
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+.flickr_badge_image {
+	@extend .pull-left;
+}
+.float-right {
+	@extend .pull-right;
+}
+
+
+.nav-list .nav-list .active > a, 
+.nav-list .nav-list .active > a:hover {
+	background-color: #bbb;
+}
+
+
+/* Main Navbar */
+.navbar-inner {
+	background:#333 url(../img/grad.png) left top repeat-x;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+}
+.navbar-inner > .container {
+
+}
+.navbar-inner .brand {
+	color:white;
+}
+
+.navbar .nav {
+	li {
+		&.active a,
+		&.active a:hover {
+			background-image: url(../img/grad.png);
+			background-color: $red;
+			background-position: left top;
+			background-repeat: repeat-x;
+		}
+		a {
+			font-family: 'Open Sans', Helvetica, Arial;
+			font-weight: 700;
+			color: white;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+			font-size: 14px;
+			text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+			&:hover {
+				color: $red;
+			}
+		}
+	}
+}
+
+/* Blocks */
+.newest-results {
+	margin-left: 0;
+	li {
+		line-height:1.3em;
+		margin-bottom:0.8em;
+		list-style:none;
+	}
+	small {
+		color: #999;
+		font-style:italic;
+	}
+	a { 
+		color: $red;
+	}
+}
+
+.newest-riders {
+	margin-left: 0;	
+	li {
+		line-height:1.3em;
+		margin-bottom:0.5em;
+		list-style:none;
+	}
+	a {
+		color: $red;
+	}
+}
+
+
+.heading-underline {
+	border-bottom:5px solid rgb(238,238,238);
+	margin-bottom:10px;
+}
+
+/* Badge Styles */
+.badge-id {
+	background-color:transparent;
+	color:#bbb;
+	text-shadow:none;
+
+	&:hover, 
+	a:hover & {
+		color:#999;
+		text-decoration:none;
+	}
+}
+
+
+.caption {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color:#bbb;
+	margin:0;
+/*	font-size:100%;*/
+}
+.progress-thin {
+	margin-bottom:0;
+}
+
+.table td.td-active {
+	background-color:#f5f5f5;
+}
+.table-bare tbody td {
+	border:0;
+}
+
+.text-right {
+	text-align:right;
+}
+
+.gradient {
+	background: #595959; /* Old browsers */
+	background: -moz-linear-gradient(left,  #595959 50%, #9dc850 50%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(50%,#595959), color-stop(50%,#9dc850)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #595959 50%,#9dc850 50%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #595959 50%,#9dc850 50%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #595959 50%,#9dc850 50%); /* IE10+ */
+	background: linear-gradient(to right,  #595959 50%,#9dc850 50%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#595959', endColorstr='#9dc850',GradientType=1 ); /* IE6-9 */	
+}
+
+
+@include color-background-border("white", $white);
+@include color-background-border("black", $black);
+@include color-background-border("grayLighter", $grayLighter);
+@include color-background-border("grayLight", $grayLight);
+@include color-background-border("gray", $gray);
+@include color-background-border("grayDark", $grayDark);
+@include color-background-border("grayDarker", $grayDarker);
+@include color-background-border("blue", $blue);
+@include color-background-border("red", $red);
+@include color-background-border("green", $green);
+@include color-background-border("yellow", $yellow);
+@include color-background-border("purple", $purple);

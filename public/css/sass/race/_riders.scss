@@ -1,0 +1,126 @@
+//  All the riders pages CSS
+
+#rider-view {
+	.page-header {
+		margin-bottom:5px;
+		border-bottom:0;
+	}
+	h1 {
+		margin-bottom:5px;
+		a {
+			color: $gray;
+		}
+	}
+	.latest-result {
+		h2 {
+			@extend %pretty-heading;
+		}
+		.result {
+			@media (max-width: 768px){
+				h1 { font-size:31px; }
+				h4 { font-size:13px; }
+			}
+		}
+		.result-one {
+			@extend .result;
+			h1 { color: $blue; }
+			h4 { color: lighten($blue, 20%); }
+		}
+		.result-two {
+			@extend .result;
+			h1 { color: mix($blue, $green, 66%); }
+			h4 { color: lighten( mix($blue, $green, 66%), 20%); }
+		}
+		.result-three {
+			@extend .result;
+			h1 { color: mix($blue, $green, 33%); }
+			h4 { color: lighten( mix($blue, $green, 33%), 20%);  }
+		}
+		.result-four {
+			@extend .result;
+			h1 { color: $green; }
+			h4 { color: lighten( $green, 20%);  }
+		}
+	}
+	.sidebar {
+		h2 {
+			color:$blue;
+			@extend %pretty-heading;
+		}
+		h3 {
+			@extend .heading-underline;
+			color: $grayDarker;
+			font-size: 18px;
+			font-weight:normal;
+		}
+		.podium {
+			td, th {
+				border: 0;
+				color: $grayLight;
+			}
+			th { 
+				width:50%;
+				// text-align:right;
+			}
+			.active {
+				color: $blue;
+				font-weight:bold;
+			}
+			@media (max-width:980px){
+				& { 
+					width:50%;
+					// float:left;
+					display: inline-block;
+				}
+			}
+		}
+		.race-types {
+			th, td {
+				border: 0;
+			}
+			th {
+				width:50%;
+				// text-align:right;
+				color: $grayLight;
+				font-size:95%;
+			}
+			@media (max-width:980px){
+				& { 
+					width:50%;
+					display: inline-block;
+				}
+			}
+		}
+		.progress-podium {
+			@extend .progress;
+			@extend .progress-thin;
+			.bar {
+				background-color: $blue;
+			}
+		}
+		.progress-types {
+			@extend .progress;
+			@extend .progress-thin;
+			.bar {
+				background-color: $yellow;
+			}
+		}
+	}
+	.results {
+		h2 {
+			color: $red;
+			@extend %pretty-heading;
+		}
+		h4 {
+			a {
+				font-weight:normal;
+				color: $red;
+			}
+		}
+	}
+}
+
+%pretty-heading {
+	font-weight:300;
+	font-size: 29px;
+}

@@ -1,0 +1,17 @@
+#race-view {
+
+	.rider-category-results {
+		h3 {
+			@extend .heading-underline;
+			@extend %pretty-heading;
+			color: $red;
+		}
+	}
+	.rider-result {
+		h4 {
+			a {
+				color: $red;
+			}
+		}
+	}
+}

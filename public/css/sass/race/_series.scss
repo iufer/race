@@ -1,0 +1,26 @@
+#series-view {
+
+	h2 {
+		@extend %pretty-heading;
+		@extend .heading-underline;
+	}
+	.races {
+		h2 { color: $blue; }		
+		td.show-all {
+			cursor:pointer;
+			background: lighten($blue, 20%);
+			color:$white;
+			font-weight:bold;
+		}
+	}
+
+	.results {
+		h2 { 
+			color: $red;
+		}
+		a {
+			color: $red;
+			font-weight:bold;
+		}
+	}
+}

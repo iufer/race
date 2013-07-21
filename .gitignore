@@ -1,0 +1,9 @@
+.DS_Store
+
+public/system/race/cache/
+
+.vagrant
+
+logs/
+
+public/tmp/

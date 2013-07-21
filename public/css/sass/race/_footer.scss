@@ -1,0 +1,19 @@
+.container-footer {
+	h4, li, p {
+		color: $grayLight;
+		a {
+			color: $red;
+		}
+	}
+
+	.nav-pills {
+		a:hover {
+			background-color:$red;
+			color: $white;
+		}
+	}
+
+	.btn {
+		@extend .btn-danger;
+	}
+}
