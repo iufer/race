@@ -7,3 +7,5 @@ public/system/race/cache/
 logs/
 
 public/tmp/
+
+.sass-cache

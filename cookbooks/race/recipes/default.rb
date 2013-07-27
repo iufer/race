@@ -49,3 +49,11 @@ service "apache2" do
   action :restart
 end
 
+gem_package "sass" do
+  action :install
+end
+
+gem_package "compass" do
+  action :install
+end
+

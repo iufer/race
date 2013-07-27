@@ -17,8 +17,7 @@ Testing in Vagrant
 Installation
 ------------
 
-1.  Edit system/race/config/config.php
-	-  Set base_url to your site root and configure the settings for your environment
+1.  Edit system/race/config/config.php to wokr in your environment
 2.  Create a new database and user with database and table permissions in MySQL
 3.  Edit system/race/config/database.php
 4.  Browse to http://yoursite.com/install
@@ -76,6 +75,17 @@ Sponsors
 --------
 You can add sponsor logos to the site. You can also apply a sponsor to a particular race and their logo will appear on the race detail page.
 
+Flickr
+------
 
+To change the Flickr stream you'll need to find your Flickr user ID by using a tool like this one: http://idgettr.com/
+
+Compiling SASS with Compass
+---------------------------
+
+    $ cd /path/to/race
+    $ vagrant ssh
+    $ cd /data/www/race
+    $ compass watch
 
 
