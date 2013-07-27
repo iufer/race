@@ -26,14 +26,14 @@ echo form_hidden('race_id', set_value('race_id', $race->race_id));
 					</div>
 					<div class="span1">
 						<label>ID</label>
-						<input class="span1" type="text" name="rider_id" value="<?= set_value('rider_id') ?>" id="rider_id">
+						<input disabled="disabled" class="span1" type="text" name="rider_id" value="<?= set_value('rider_id') ?>" id="rider_id">
 					</div>
 					<div class="span3">
 						<label class="gray4">Category *</label>
 						<?php
 							echo form_dropdown('rider_category_id', $rider_categories, set_value('rider_category_id'), 'id="rider_category_id" class="span2"');		
 						?>
-						<a class="btn btn-mini"><i class="icon-lock"></i> Lock</a>
+						<!-- <a class="btn btn-mini"><i class="icon-lock"></i> Lock</a> -->
 					</div>
 				</div>
 			</div>
@@ -58,7 +58,7 @@ echo form_hidden('race_id', set_value('race_id', $race->race_id));
 			<table class="table table-bordered table-striped table-condensed">
 				<thead><tr><th>Type</th><th>Data</th><th>Note</th><th>&nbsp;</th></t></thead>
 				<tbody id="result_data_entries">
-					<tr id="result_data_entry" class="result_data_entry">
+					<tr id="result_data_entry_row" class="result_data_entry">
 						<td>
 							<?php echo form_dropdown('result_type_id[]', $result_types, 3, 'class="result_type_id span3"'); ?>
 						</td>
@@ -83,9 +83,23 @@ echo form_hidden('race_id', set_value('race_id', $race->race_id));
 			&nbsp;
 		</div>
 		<div class="span2">
-			<button class="btn btn-primary" type="submit">Submit <img height="12" src="<?= site_url('img/admin/loading.gif'); ?>" id="submit_result_loading" style="display:none;" /></button>
+			<button class="btn btn-primary" type="submit">Save Result <img height="12" src="<?= site_url('img/admin/loading.gif'); ?>" id="submit_result_loading" style="display:none;" /></button>
 		</div>
 	</div>
 
-	<div id="result_edit" class="modal"></div>		
 </form>
+
+<!-- Modal Window -->
+<div id="result_edit_modal" class="modal" style="display:none;">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h2>Edit Result</h2>
+	</div>
+	<div class="modal-body">
+
+	</div>	
+	<div class="modal-footer">		
+		<button data-dismiss="modal" class="btn btn-primary">Done</button>
+		<button data-dismiss="modal" class="btn">Cancel</button>
+	</div>
+</div>

@@ -1,24 +1,9 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cgiufer\/Sites\/raceapp\/css\/sass\/race\/add\.scss}line{font-family:\000031}}
-.ui-timepicker-div .ui-widget-header {
-  margin-bottom: 8px;
-}
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cgiufer\/Sites\/raceapp\/css\/sass\/race\/add\.scss}line{font-family:\000032}}
-.ui-timepicker-div dl {
-  text-align: left;
-}
+.ui-timepicker-div dl { text-align: left; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cgiufer\/Sites\/raceapp\/css\/sass\/race\/add\.scss}line{font-family:\000033}}
-.ui-timepicker-div dl dt {
-  height: 25px;
-}
+.ui-timepicker-div dl dt { height: 25px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cgiufer\/Sites\/raceapp\/css\/sass\/race\/add\.scss}line{font-family:\000034}}
-.ui-timepicker-div dl dd {
-  margin: -25px 0 10px 65px;
-}
+.ui-timepicker-div dl dd { margin: -25px 0 10px 65px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/cgiufer\/Sites\/raceapp\/css\/sass\/race\/add\.scss}line{font-family:\000035}}
-.ui-timepicker-div td {
-  font-size: 90%;
-}
+.ui-timepicker-div td { font-size: 90%; }

@@ -1,4 +1,4 @@
-define(['jquery','race','jqueryui'], function($, Race){
+define(['jquery','race','jqueryui','bootstrap'], function($, Race){
 
 	var rider_category_locked = false;
 
@@ -13,7 +13,9 @@ define(['jquery','race','jqueryui'], function($, Race){
 	
 	$('#add_data_row').click(function(){	
 		// clone the default 
-		var new_data_entry = $('#result_data_entry').clone(true, true);
+		var new_data_entry = $('#result_data_entry_row').clone(true, true);
+		$(new_data_entry).attr('id', null);
+
 		var b = $('<a />')
 				.addClass('result_data_new')
 				.addClass('btn')
@@ -45,18 +47,15 @@ define(['jquery','race','jqueryui'], function($, Race){
 		}
 	});
 	
-	$('#result_scope_switch').toggle(
-		function(){
-			$('.result_rider_info').hide();
-			$('.result_global').show();
-			$('#result_scope_global').val(1);
-		},
-		function(){
-			$('.result_rider_info').show();
-			$('.result_global').hide();
-			$('#result_scope_global').val(0);
-		}
-	);
+
+	//$('#result_scope_switch').toggle(
+	$('#tab-global').click(function(){			
+		$('#result_scope_global').val(1);
+	});
+
+	$('#tab-single').click(function(){
+		$('#result_scope_global').val(0);
+	});
 	
 	
 	//hijack the results add form
@@ -121,7 +120,7 @@ define(['jquery','race','jqueryui'], function($, Race){
 		$('#submit_result_loading').hide();
 	}
 	
-	$('.result_delete a').live('click', function(event){
+	$('.result_delete').live('click', function(event){
 		event.preventDefault();
 		href = $(this).attr('href');
 		$.getJSON(href, function(){
@@ -133,7 +132,20 @@ define(['jquery','race','jqueryui'], function($, Race){
 	$('#rider_name').autocomplete({
 		source:"../../../rider/search/",
 		minLength: 2,
-		select: Race.riderNameSelect
+		select: function(event, ui){
+			event.preventDefault();
+			// console.log(ui.item);
+			$('#rider_name').val(ui.item.label);
+			$('#rider_id').val(ui.item.value);
+
+			// auto focus on the first data item
+			$('.result_data_field').eq(0).focus();
+
+			if(rider_category_locked == false){
+				$('#rider_category_id').val(ui.item.rider_category_id);		
+			}
+		},
+		autoFocus: true
 	});
 	
 	$('#create_placings').click(function(e){
@@ -147,58 +159,44 @@ define(['jquery','race','jqueryui'], function($, Race){
 		return false;
 	});
 	
-	$('.result_edit a').live('click', function(event){
+	var editModal = $('#result_edit_modal').modal({show: false});
+
+	$('.result_edit').live('click', function(event){
 		event.preventDefault();
 		href = $(this).attr('href');
 		// open a modal window
-		$('#result_edit').load(href, function(){
+		$('#result_edit_modal .modal-body').load(href, function(){
 			console.log('loaded', href);
-			$('#result_edit').dialog('open');
+			// $('#result_edit').dialog('open');
+			$('#result_edit_modal').modal('show');
 		});
 	});
 	
-	$('#result_edit').dialog({
-			autoOpen: false,
-			height: 480,
-			width: 640,
-			modal: true,
-			buttons: {
-				'Done': function(){
-					// find the form inside here
-					$.ajax({type:'POST', 
-							url: $('#result_edit form').attr('action'), 
-							data: $('#result_edit form').serialize(), 
-							success: function(response){ 
-								console.log('sent form', response);
-								$('#result_edit').dialog( "close" );
-								// force reload of the results
-								$('#race_results_block').load('../../result/race/' + race_id);
-							}
-						});					
-					
-					}
+	// $('#result_edit').dialog({
+	// 		autoOpen: false,
+	// 		height: 480,
+	// 		width: 640,
+	// 		modal: true,
+	// 		buttons: {
+	$('#result_edit_modal').on('hidden', function(){
+		// find the form inside here
+		$.ajax({type:'POST', 
+				url: $('#result_edit_modal form').attr('action'), 
+				data: $('#result_edit_modal form').serialize(), 
+				success: function(response){ 
+					console.log('sent form', response);
+					// $('#result_edit_modal').dialog( "close" );
+					// force reload of the results
+					$('#race_results_block').load('../../result/race/' + race_id);
 				}
-			});
+			});					
+	});
 	
 
 	$('a[data-toggle="tab"]').on('shown', function (e) {
 	  $(e.target).trigger('tabshown'); // activated tab
 	  $(e.relatedTarget).trigger('tabhidden'); // previous tab
-	})
-
-	Race.riderNameSelect = function(event, ui){
-		event.preventDefault();
-		// console.log(ui.item);
-		$('#rider_name').val(ui.item.label);
-		$('#rider_id').val(ui.item.value);
-
-		// auto focus on the first data item
-		$('.result_data_field').eq(0).focus();
-
-		if(rider_category_locked == false){
-			$('#rider_category_id').val(ui.item.rider_category_id);		
-		}
-	}
+	});
 
 
 });

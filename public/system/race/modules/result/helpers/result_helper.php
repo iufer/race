@@ -112,10 +112,13 @@ function buildRiderResults($rider_results, $admin = false){
 
 		// Add the admin editing buttons
 		if($admin) {
-			$delete_link = anchor("admin/result/del/{$result->result_id}", '<span class="float-right ui-icon ui-icon-trash">&nbsp;</span>');
-			$edit_link = anchor("admin/result/edit/{$result->result_id}", '<span class="float-right ui-icon ui-icon-gear">&nbsp;</span>');
+			$delete_link = anchor("admin/result/del/{$result->result_id}", '<span class="float-right ui-icon ui-icon-trash">&nbsp;</span>', 'class="result_delete btn btn-danger"');
+			$edit_link = anchor("admin/result/edit/{$result->result_id}", '<span class="float-right ui-icon ui-icon-gear">&nbsp;</span>', 'class="result_edit btn"');
 
-			$row[3]['td'] .= $delete_link ." ". $edit_link;
+			$row[] = array(
+				'td' => $edit_link ." ". $delete_link,
+				'attr' => array('style'=> "text-align:right;")
+			);
 		}
 
 		$rows[] = $row;
@@ -143,7 +146,11 @@ function buildRiderResults($rider_results, $admin = false){
 				'attr' => array('width' => "25%",'class' => "nowrap", 'colspan' => "3")
 			)
 		);
-		
+
+		if($admin) {
+			// add the extra td
+			$rows[ count($rows) -1 ][] = array('td' => "&nbsp;");
+		}
 	}
 	
 	return buildTable($rows, null, "table table-condensed");

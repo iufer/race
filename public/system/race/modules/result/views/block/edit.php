@@ -1,6 +1,6 @@
 <?= form_open_multipart("admin/result/edit/{$result->result_id}", array('id'=>'form_result_edit')); ?>
 
-	<h2>Editing result for <?= $result->rider_name ?> <?= formatRiderId($result->rider_id) ?> for <?= $result->race_name ?></h2>
+	<p><?= $result->rider_name ?> <?= formatRiderId($result->rider_id) ?> for <?= $result->race_name ?></p>
 
 	<div class="result_rider_info">
 	<div class="gray4">Category</div>

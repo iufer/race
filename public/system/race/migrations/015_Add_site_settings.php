@@ -14,12 +14,12 @@ class Migration_Add_site_settings extends CI_Migration {
 			),
 			array(
 				'setting_key'=>'site_copyright',
-				'setting_value'=>'2011 Chris Iufer. All Rights Reserved',
+				'setting_value'=>'2013',
 				'setting_date_created'=> date( 'Y-m-d H:i:s' )
 			),
 			array(
 				'setting_key'=>'site_share_flickr_user',
-				'setting_value'=>'59739290%40N00',
+				'setting_value'=>'24783801@N00',
 				'setting_date_created'=> date( 'Y-m-d H:i:s' )
 			),
 			array(

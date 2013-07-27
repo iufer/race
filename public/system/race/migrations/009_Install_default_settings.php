@@ -8,7 +8,7 @@ class Migration_Install_default_settings extends CI_Migration {
 		if( $this->db->count_all('setting') == 0 ) {
 			$data = array(
 				array('setting_key'=>'site_name', 'setting_value'=>'RACE', 'setting_date_created'=>date( 'Y-m-d H:i:s')),
-				array('setting_key'=>'site_description', 'setting_value'=>"Rodney's Awesome Cycling Events", 'setting_date_created'=>date( 'Y-m-d H:i:s')),
+				array('setting_key'=>'site_description', 'setting_value'=>"RACE", 'setting_date_created'=>date( 'Y-m-d H:i:s')),
 				array('setting_key'=>'rider_podium_places', 'setting_value'=>'5', 'setting_date_created'=>date( 'Y-m-d H:i:s')),
 				array('setting_key'=>'rider_anon_name', 'setting_value'=>"-- Unlisted --", 'setting_date_created'=>date( 'Y-m-d H:i:s')),
 				array('setting_key'=>'race_point_bracket', 'setting_value'=>'[20,16,14,12,10,8,6,4,2,1,1,1]', 'setting_date_created'=>date( 'Y-m-d H:i:s')),

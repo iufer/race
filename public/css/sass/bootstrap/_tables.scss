@@ -24,12 +24,13 @@ table {
   td {
     padding: 8px;
     line-height: $baseLineHeight;
-    text-align: left;
+    // text-align: left;
     vertical-align: top;
     border-top: 1px solid $tableBorder;
   }
   th {
     font-weight: bold;
+    text-align: left;
   }
   // Bottom align for column headings
   thead th {

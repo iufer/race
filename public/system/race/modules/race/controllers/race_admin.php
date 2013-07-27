@@ -206,7 +206,7 @@ class Race_admin extends RA_Controller {
 			$this->result_model->result_rider_id = $rider->rider_id;
 			$this->result_model->result_race_id = $race_id;
 			$this->result_model->result_data = $places[$rider_category];
-			$this->result_model->result_note = null;
+			$this->result_model->result_note = "";
 			$this->result_model->result_rider_category_id = $rider->result_rider_category_id;
 			$result_id = $this->result_model->save();
 			

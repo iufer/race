@@ -25,7 +25,11 @@ class Rider_model extends CI_model {
 		$result = $query->result();
 		$riders = array();
 		foreach($result as $rider){
-			$riders[] = array('value'=> $rider->rider_id, 'label'=>$rider->rider_name, 'rider_category_id'=>$rider->rider_rider_category_id);
+			$riders[] = array(
+				'value' => $rider->rider_id, 
+				'label' => $rider->rider_name, 
+				'rider_category_id' => $rider->rider_rider_category_id
+				);
 		}
 		return $riders;
 	}
