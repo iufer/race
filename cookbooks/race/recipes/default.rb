@@ -22,6 +22,7 @@ end
 execute "create #{node['race']['db']} database" do
   command "/usr/bin/mysqladmin -u root -p\"#{node['mysql']['server_root_password']}\" create #{node['race']['db']}"    
   action :run
+  creates "/var/lib/mysql/#{node['race']['db']}"
 end
 
 # make sure that apache is loading the ini with the chef directives
@@ -44,6 +45,7 @@ web_app "race" do
   server_name node['race']['server_name']
 end
 
-service "apache" do 
-  action :restart, :immediately
+service "apache2" do 
+  action :restart
 end
+

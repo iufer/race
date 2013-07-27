@@ -60,6 +60,18 @@ Vagrant.configure("2") do |config|
         "user" => "vagrant",
         "group" => "vagrant"
       },
+      "php" => {
+        "directives" => {
+          "display_errors" => "On",
+          "display_startup_errors" => "On",
+          "error_reporting" => "E_ALL | E_STRICT",
+          "log_errors" => "On",
+          "error_log" => "/data/www/race/logs/php.error.log",
+          "short_open_tag" => "1",
+          "post_max_size" => "1024M",
+          "upload_max_filesize" => "1024M"
+        }
+      },
       "fqdn" => "race.local",
       "mysql" => {
         "bind_address" => "localhost",        
