@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Result_block extends MX_Controller {
+class Result_block extends RA_Controller {
 
 	private $cache = array();
 

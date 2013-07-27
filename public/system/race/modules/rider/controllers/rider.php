@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Rider extends MX_Controller {
+class Rider extends RA_Controller {
 
 	public function __construct(){
 		parent::__construct();

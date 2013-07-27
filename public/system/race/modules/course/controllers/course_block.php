@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Course_block extends MX_Controller {
+class Course_block extends RA_Controller {
 
 	public function __construct(){
 		parent::__construct();

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Search_block extends MX_Controller {
+class Search_block extends RA_Controller {
 
 	public function search($showButton = true) {
 		$this->load->helper('form');

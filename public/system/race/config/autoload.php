@@ -109,8 +109,4 @@ $autoload['language'] = array('race');
 |
 */
 
-$autoload['model'] = array('setting/setting_model');
-
-
-/* End of file autoload.php */
-/* Location: ./application/config/autoload.php */
+$autoload['model'] = array();
