@@ -1,7 +1,0 @@
-SetEnv RACE_ENV production
-#SetEnv RACE_ENV testing
-#SetEnv RACE_ENV development
-
-RewriteEngine on
-RewriteCond $1 !^(index\.php|img|robots\.txt|css|js|favicon\.ico|tmp)
-RewriteRule ^(.*)$ /index.php/$1 [L]
