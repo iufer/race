@@ -5,6 +5,9 @@ require.config({
 		'underscore': {
 			exports: '_'
 		},
+		'jqueryui': {
+			deps: ['jquery']
+		},
 		'bootstrap': {
 			deps: ['jquery'],
 			exports: 'Bootstrap'

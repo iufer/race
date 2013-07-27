@@ -11,7 +11,7 @@ echo form_hidden('race_id', set_value('race_id', $race->race_id));
 		<ul class="nav nav-tabs">
 			<li><a id="tab-single" class="default" data-target="#single" data-toggle="tab">Single Rider</a></li>
 			<li><a id="tab-global" data-target="#all" data-toggle="tab">All Riders</a></li>
-			<li><a id="tab-special" data-target="#special" data-toggle="tab">Special</a></li>
+			<li><a id="tab-special" data-target="#special" data-toggle="tab">Calculate Placings</a></li>
 		</ul>
 	
 		<!-- Set this when changing tabs -->
@@ -82,8 +82,8 @@ echo form_hidden('race_id', set_value('race_id', $race->race_id));
 			<div id="form_error" class="alert" style="display:none;"><span class="alert-content"></span></div>
 			&nbsp;
 		</div>
-		<div class="span2">
-			<button class="btn btn-primary" type="submit">Save Result <img height="12" src="<?= site_url('img/admin/loading.gif'); ?>" id="submit_result_loading" style="display:none;" /></button>
+		<div class="span2 text-right">
+			<button class="btn btn-primary btn-large" type="submit">Save Result <img height="12" src="<?= site_url('img/admin/loading.gif'); ?>" id="submit_result_loading" style="display:none;" /></button>
 		</div>
 	</div>
 

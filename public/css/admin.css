@@ -1082,7 +1082,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini { *padding-top: 1px; *pad
 
 .nav-tabs > li { margin-bottom: -1px; }
 
-.nav-tabs > li > a { padding-top: 8px; padding-bottom: 8px; line-height: 20px; border: 1px solid transparent; -webkit-border-radius: 4px 4px 0 0; -moz-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0; }
+.nav-tabs > li > a { cursor: pointer; padding-top: 8px; padding-bottom: 8px; line-height: 20px; border: 1px solid transparent; -webkit-border-radius: 4px 4px 0 0; -moz-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0; }
 .nav-tabs > li > a:hover { border-color: #eeeeee #eeeeee #dddddd; }
 
 .nav-tabs > .active > a, .nav-tabs > .active > a:hover { color: #555555; background-color: #eeeeee; border: 1px solid #ddd; border-bottom-color: transparent; cursor: default; }
@@ -1861,3 +1861,14 @@ a.label:hover, a.badge:hover { color: white; text-decoration: none; cursor: poin
 .text-left { text-align: left; }
 
 .text-center { text-align: center; }
+
+.nav li a { cursor: pointer; }
+
+.rider_category_results .rider_result .table { margin-bottom: 0; }
+
+.rider_latest h2 { margin-top: 0; }
+.rider_latest h4 { font-size: 100%; font-weight: 400; letter-spacing: 1px; }
+
+.result_special { margin-bottom: 3em; }
+
+body { background: white; }

@@ -111,6 +111,7 @@
 }
 // Actual tabs (as links)
 .nav-tabs > li > a {
+  cursor: pointer;
   padding-top: 8px;
   padding-bottom: 8px;
   line-height: $baseLineHeight;

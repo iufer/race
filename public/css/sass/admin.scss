@@ -10,8 +10,13 @@
 @import "race/mixins";
 @import "race/responsive";
 @import "race/helpers";
+@import "admin/admin";
 
 @import url("admin/jquery-ui-timepicker.css");
 @import url("admin/jquery-ui.css");
 @import url("admin/jquery.miniColors.css");
 @import url("admin/jquery.wysiwyg.css");
+
+body { 
+	background: white;
+}

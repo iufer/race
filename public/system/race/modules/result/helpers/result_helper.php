@@ -112,7 +112,7 @@ function buildRiderResults($rider_results, $admin = false){
 
 		// Add the admin editing buttons
 		if($admin) {
-			$delete_link = anchor("admin/result/del/{$result->result_id}", '<span class="float-right ui-icon ui-icon-trash">&nbsp;</span>', 'class="result_delete btn btn-danger"');
+			$delete_link = anchor("admin/result/del/{$result->result_id}", '<span class="float-right ui-icon ui-icon-trash">&nbsp;</span>', 'class="result_delete btn"');
 			$edit_link = anchor("admin/result/edit/{$result->result_id}", '<span class="float-right ui-icon ui-icon-gear">&nbsp;</span>', 'class="result_edit btn"');
 
 			$row[] = array(
